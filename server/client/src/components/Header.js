@@ -3,9 +3,16 @@ import React, { Component } from "react";
 class Header extends Component {
   render() {
     return (
-        <div>
-            Header
+      <nav>
+        <div className="nav-wrapper">
+          <a className="left brand-logo">Emailinx</a>
+          <ul class="right">
+            <li>
+              <a>Login With Google</a>
+            </li>
+          </ul>
         </div>
+      </nav>
     );
   }
 }
