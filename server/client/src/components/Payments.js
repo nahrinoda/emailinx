@@ -1,29 +1,25 @@
 import React, { Component } from "react";
 import StripeCheckout from "react-stripe-checkout";
+import { connect } from "react-redux";
+import * as actions from "../actions";
 
 class Payments extends Component {
-  //   onToken = token => {
-  //     fetch("/save-stripe-token", {
-  //       method: "POST",
-  //       body: JSON.stringify(token)
-  //     }).then(response => {
-  //       response.json().then(data => {
-  //         alert(`We are in business, ${data.email}`);
-  //       });
-  //     });
-  //   };
-
   render() {
-      debugger;
-      
     return (
       <StripeCheckout
+        name="Emailinx"
+        description="$5 for 5 emails/serveys credits"
         amount={500}
-        token={token => console.log(token)}
+        token={token => this.props.handleToken(token)}
         stripeKey={process.env.REACT_APP_STRIPE_KEY}
-      />
+      >
+        <button className="btn">Add Credits</button>
+      </StripeCheckout>
     );
   }
 }
 
-export default Payments;
+export default connect(
+  null,
+  actions
+)(Payments);
