@@ -21,7 +21,10 @@ class Header extends Component {
           <li key="2">
             <Payments />
           </li>,
-          <li key="5" style={{ marginLeft: "10px", textTransform: "capitalize" }}>
+          <li
+            key="5"
+            style={{ marginLeft: "10px", textTransform: "capitalize" }}
+          >
             {" "}
             {this.props.auth.name}
           </li>,
@@ -49,17 +52,19 @@ class Header extends Component {
 
   render() {
     return (
-      <nav>
-        <div className="nav-wrapper">
-          <Link
-            to={this.props.auth ? "/surveys" : "/"}
-            className="left brand-logo"
-          >
-            Emailinx
-          </Link>
-          <ul className="right">{this.renderContent()}</ul>
-        </div>
-      </nav>
+      <div className="row">
+        <nav>
+          <div className="nav-wrapper">
+            <Link
+              to={this.props.auth ? "/surveys" : "/"}
+              className="left brand-logo"
+            >
+              Emailinx
+            </Link>
+            <ul className="right">{this.renderContent()}</ul>
+          </div>
+        </nav>
+      </div>
     );
   }
 }
