@@ -12,7 +12,7 @@ export default [
   { label: "Email Body", name: "body", noValueerror: "Provide a Survey body" },
   {
     label: "Recipient List",
-    name: "emails",
+    name: "recipients",
     noValueerror: "Provide a recipient email"
   }
 ];
